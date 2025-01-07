@@ -1,0 +1,99 @@
+body{
+    background: url(back3.avif);
+    font-family:  "Quicksand", sans-serif;
+}
+.container{
+    background-color: white;
+    /*border: 2px solid black;*/
+    border-radius: 20px;
+    height: 500px ;
+    width: 550px;
+    box-shadow: 10PX 3PX 5PX  GREY ;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    top: 75px;
+    opacity: 0.9;
+    
+}
+
+.input-form{
+    outline: none;
+    border: none;
+    color: cadetblue;
+    position: absolute;
+    left: 133px;
+    bottom: 229px;
+    
+}
+.input-items{
+    border: none;
+    outline: none;
+    
+    border-bottom: 2px solid black;
+    /* background-color: gold; */
+    background: none;
+    margin: 15px 30px;
+    padding: 1px 7px;
+}
+#text{
+    position: absolute;
+    bottom: 375px;
+}
+#alr_reg{
+    position: absolute;
+    bottom: 179px;
+     left: 141px;
+     font-size: 14px;
+}
+#sub{
+    border: none;
+    outline: none;
+    position: relative;
+    width: 45%;
+    left: 63px;
+    bottom: -11px;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition-property:all;
+    transition-duration: 2s;
+    color: cadetblue;
+    
+   
+   
+}
+#sub:hover{
+    background-color: lightskyblue;
+  color: white;
+    transform: scale(1.3);
+    
+}
+.head{
+    display: flex;
+    justify-content: center;
+    color:black;
+    position: relative;
+    top:82px;
+    font-size: larger;
+    font-family: "Anta", sans-serif;
+    
+}
+h3{
+    left: -48px;
+    position: relative;
+    top: 45px;
+}
+.logo{
+   
+   height: 49px;
+   width: 70px;
+   position: relative;
+   left: 670px;
+}
+.logo img{
+    height: 146px;
+    width: 150px;
+    border-radius: 500px;
+}

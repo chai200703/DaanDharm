@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaanDharm - Make a Difference</title>
+    <link rel="stylesheet" href="static/home.css">
+    <script src="static/script.js" defer></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>DaanDharm</h1>
+
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#causes">Our Causes</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="donor.html">Donate Now</a></li>
+                {% if not request.user.is_authenticated %}
+                <li><a href="login.html">Login</a></li> 
+                {%else%}
+                <li><a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a></li>
+                {%endif%}
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            {% if request.user.is_authenticated %}
+            <h1>Welcome {{full_name}}</h1>
+            {%endif%}            
+            <h2>Make a Difference with DaanDharm</h2>
+            <p>Your small contribution can change lives. Join us in our mission to create a better world through compassion and charity.</p>
+            <button class="donate-btn" formaction="{% url 'donate' %}">Donate Now</button>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About DaanDharm</h2>
+        <p>DaanDharm is a nonprofit organization that works to provide support for the underprivileged. We believe in making the world a better place through acts of kindness and generosity.</p>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>Step 1</h3>
+                <p>Select a cause that matters to you.</p>
+            </div>
+            <div class="step">
+                <h3>Step 2</h3>
+                <p>Donate securely through our platform.</p>
+            </div>
+            <div class="step">
+                <h3>Step 3</h3>
+                <p>Receive updates on how your donations are making a difference.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Causes Section -->
+    <section id="causes">
+        <h2>Our Causes</h2>
+        <div class="cause-cards">
+            <div class="card">
+                <img src="cause1.jpg" alt="Education for All">
+                <h3>Food For All</h3>
+                <p>Help provide food to needy persons.</p>
+            </div>
+            <div class="card">
+                <img src="cause2.jpg" alt="Healthcare Support">
+                <h3>Healthcare Support</h3>
+                <p>Contribute to healthcare services for those in need.</p>
+            </div>
+            <div class="card">
+                <img src="cause3.jpg" alt="Clean Water">
+                <h3>Clean Water</h3>
+                <p>Bring clean drinking water to rural communities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>Contact Us at: support@daandharm.org</p>
+        <p>Follow Us on:
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+        </p>
+    </footer>
+
+</body>
+</html>
+
+
+
+

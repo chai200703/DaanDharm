@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://kit.fontawesome.com/94bad40bd1.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/login_style.css">
+</head>
+<body>
+    <div>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    <div class="logo">
+        <img src="static/logo.jpg" alt=""> 
+        
+    </div>
+    <div class="head">
+        <h1>DAAN DHARM</h1>
+
+    </div>
+    <div class="container">
+        <h1>WELCOME!!</h1>
+       <div id="text">Enter Your Login Id And Password!</div> 
+        <form class="input-form"  method="POST" > 
+            {% csrf_token %}
+            {% for fm in form %}
+                <div class="form-group">
+                    {{ fm.label_tag }} {{ fm }}<small class="text-danger">{{ fm.errors|striptags }}</small>
+                </div>
+                {% endfor %}
+           <div>
+            <input type="submit" value="Sign In"  id="sub">
+           </div>
+           {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    <p class="alert alert-danger my-4">{{error}}</p>
+                {% endfor %}
+            {% endif %}
+        </form>
+        <div id="alr_reg">
+             Not Registered Yet?<a href="registration.html">Register Here!</a>
+        </div>
+    </div>
+   
+</body>
+</html>

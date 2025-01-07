@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/form.css">
+    <title>form</title>
+</head>
+<body>
+    <div class="cointainer">
+      {% if messages %}
+      <ul class="messages">
+          {% for message in messages %}
+              <li class="{{ message.tags }}">{{ message }}</li>
+          {% endfor %}
+      </ul>
+  {% endif %}
+          <form method="post" novalidate>
+             {% csrf_token %} 
+              <h1 class="main">Registration form</h1>
+              <hr>
+              <h2>User's Details:</h2>
+              {% for fm in form %}
+              <div class="form-group">
+                  {{ fm.label_tag }} {{ fm }} <small class="text-danger">{{ fm.errors|striptags }}</small>
+              </div>
+          {% endfor %}
+                
+          <input type="submit" value="SUBMIT" > 
+              
+            
+              
+      
+            
+      
+      
+      
+          </form>
+    </div> 
+</body>
+</html>
